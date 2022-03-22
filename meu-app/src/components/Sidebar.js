@@ -10,19 +10,24 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import  ListItemButton  from '@mui/material/ListItemButton';
 
 //ICONES
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+
 import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import PolicyIcon from '@mui/icons-material/Policy';
+
+
+
+
 
 
 const drawerWidth = 240;
 
 export default function PermanentDrawerLeft() {
   return (
+    
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar
@@ -47,23 +52,59 @@ export default function PermanentDrawerLeft() {
         variant="permanent"
         anchor="left"
       >
-          
-          <Typography variant="h5" component="h5">
+          <Typography variant="h5"  style={{color: '#284b63'}} component="h5"  align="center">
             Modulo do sistema
         </Typography>;
+         
 
         <Toolbar />
+        
         <Divider />
-        <List>
-          {['Upload de Arquivo', 'Relatorio', 'Politica'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <DriveFolderUploadIcon /> : <AssignmentIcon />}
+
+
+
+        <Router> 
+        <List >
+          <ListItem disablePadding >
+            <Link to="/Upload"> 
+            <ListItemButton style={{color: 'red'}}>
+              <ListItemIcon style={{color: 'red'}} >
+                <DriveFolderUploadIcon />
               </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+              <ListItemText  primary="Upload de Arquivos" />
+            </ListItemButton>
+            </Link>
+          </ListItem>
+
+          <ListItem disablePadding>
+            <Link to="/Relatorio">
+            <ListItemButton style={{color: '#284b63'}}>
+              <ListItemIcon style={{color: '#284b63'}}>
+                <AssignmentIcon />
+              </ListItemIcon>
+              <ListItemText  primary="Relatorio" />
+            </ListItemButton>
+            </Link>
+          </ListItem>
+
+          <ListItem disablePadding>
+          <Link to="/Politica">
+            <ListItemButton style={{color: '#284b63'}}>
+              <ListItemIcon style={{color: '#284b63'}}>
+                <PolicyIcon />
+              </ListItemIcon>
+              <ListItemText  primary="Politica" />
+            </ListItemButton>
+            </Link>
+          </ListItem>
         </List>
+       
+        </Router>
+
+      
+
+      
+        
         <Divider />
 
       </Drawer>
