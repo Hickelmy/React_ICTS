@@ -6,10 +6,11 @@ import Relatorio from './Pages/Relatorio';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
+
 function App() {
   return (
     <Router>
-      <Nav />
+      
       <Switch>
         <Route exact path="/">
           <Upload />
@@ -25,5 +26,6 @@ function App() {
     </Router>
   )
 }
+
 
 export default App

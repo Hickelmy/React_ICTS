@@ -1,7 +1,46 @@
+import Sidebar from '../components/Sidebar';
+import Table from '../components/Table';
+
+
+
+import * as React from 'react';
+
+import Box from '@mui/material/Box';
+
+import Grid from '@mui/material/Grid';
+import Container from '@mui/material/Container';
+
+import Form from '../components/Form';
+
 function Upload() {
     return (
       <div>
-        <h1>Upload</h1>
+          
+          <Container component="main" maxWidth="md" >
+     
+            <Box sx={{ flexGrow: 1 }}>
+     
+            <Grid container spacing={2}>
+       
+            <Grid item xs={4} md={4}>
+          <Sidebar/>
+        </Grid>
+           <Grid item xs={8} md={8}>
+           <div style={{ textAlign: "center" }}>
+            <h1>REACTJS CSV  </h1>
+            <form className="csv-form">
+      <div className="csv-form-group">
+      <Form/>
+      </div>
+    </form>
+  </div>
+       </Grid>
+     </Grid>
+   </Box>
+   </Container>
+
+          
+          
         
       </div>
     )
